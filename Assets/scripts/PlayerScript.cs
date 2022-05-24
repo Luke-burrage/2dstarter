@@ -41,7 +41,7 @@ public class PlayerScript : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
 
-        health = 100;
+        health = 50;
 
         jumping = false;
         
@@ -91,7 +91,7 @@ public class PlayerScript : MonoBehaviour
     {
         
 
-        if (Input.GetKeyDown("left alt") && (touchingFloor==true) )
+        if (Input.GetKeyDown("up") && (touchingFloor==true) )
         {
             rb.velocity = new Vector2(rb.velocity.x, playerJumpVelocity );
             jumping = true;
@@ -145,7 +145,7 @@ public class PlayerScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "enemy")
         {
-            health -= 15;   // enemy takes 15 points off player
+            health -= 10;   // enemy takes 15 points off player
 
             // destroy the enemy that collides with the player
             Destroy(collision.gameObject);
